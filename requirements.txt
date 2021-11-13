@@ -5,5 +5,4 @@ matplotlib
 seaborn
 joblib
 shap
-fonction
 plotly
