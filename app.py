@@ -193,6 +193,6 @@ def main() :
         box_plotly(brute_app, data_test, chk_id)
     else:
         st.markdown("<i>…</i>", unsafe_allow_html=True)
-        
+       
 if __name__ == '__main__':
     main()
