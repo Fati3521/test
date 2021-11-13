@@ -7,11 +7,8 @@ import joblib
 import shap
 from fonction import *
 import plotly.express as px
-from zipfile import ZipFile
-import pickle
-from sklearn.cluster import KMeans
-from umap import UMAP
-import plotly.express as px
+
+
 
 
 plt.style.use('fivethirtyeight')
@@ -22,12 +19,12 @@ def main() :
 
     #@st.cache
     def load_data_app():
-        data=pd.read_csv(r"Maint_predictive/app/streamlit_app.csv", sep=";")
+        data=pd.read_csv(r"env/app/streamlit_app.csv", sep=";")
         return data
     
     #@st.cache
     def load_data_test():
-        data=pd.read_csv(r"Maint_predictive/app/data_test_brute.csv", sep=";")
+        data=pd.read_csv(r"env/app/data_test_brute.csv", sep=";")
         Num_ouverture=set(data["numero ouverture"])
         return data, Num_ouverture
     
@@ -42,11 +39,11 @@ def main() :
 
     #@st.cache
     def load_model():
-        model=joblib.load(r'Maint_predictive/app/strealit_model.sav')
+        model=joblib.load(r'env/app/strealit_model.sav')
         return model
     @st.cache
     def load_scaler():
-        scaler1 = joblib.load(r'Maint_predictive/app/strealit_scaler.sav')
+        scaler1 = joblib.load(r'env/app/strealit_scaler.sav')
         return scaler1
 
     #@st.cache
@@ -66,7 +63,7 @@ def main() :
 
     #@st.cache
     def load_umap(sample):
-        loaded_reducer = joblib.load(r'Maint_predictive/app/stramlit_umap.sav')
+        loaded_reducer = joblib.load(r'env/app/stramlit_umap.sav')
         proj_1d = loaded_reducer.transform(sample)
         X22=pd.DataFrame(proj_1d)
         return X22
