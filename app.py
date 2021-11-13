@@ -77,12 +77,12 @@ def main() :
         fig = px.box(data_fusion, x="defaut", y=feat_id, points="all")
         st.plotly_chart(fig)
 
-    data_app = load_data_app()
+    """data_app = load_data_app()
     data_test, numero_ouverture = load_data_test()
     targets = data_app.lable.value_counts()
     brute_app=data_brute()
     feature=['acc_x', 'acc_y', 'acc_z', 'gyr_x', 'gyr_y', 'gyr_z','temp']
-    #print(type(numero_ouverture))
+    #print(type(numero_ouverture))"""
 
     #######################################
     # SIDEBAR
@@ -96,7 +96,7 @@ def main() :
     <p style="font-size: 20px; font-weight: bold; text-align:center">INTERPRETATION MODELE PREDICTIF</p>
     """
     
-    st.markdown(html_temp, unsafe_allow_html=True)
+    """st.markdown(html_temp, unsafe_allow_html=True)
     
     #Loading data……
     
@@ -192,7 +192,7 @@ def main() :
         feat_id = st.selectbox("feature", feature)
         box_plotly(brute_app, data_test, chk_id)
     else:
-        st.markdown("<i>…</i>", unsafe_allow_html=True)
-
+        st.markdown("<i>…</i>", unsafe_allow_html=True)"""
+""
 if __name__ == '__main__':
     main()
