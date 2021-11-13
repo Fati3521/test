@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import joblib
 import shap
-from fonction import *
+#from fonction import *
 import plotly.express as px
 
 
